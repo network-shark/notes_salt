@@ -1,20 +1,20 @@
-#### Salt Doc
+## salt doc
 
-returns all grains available on the minion
+### returns all grains available on the minion
 
 salt \* grains.ls
 
-# show grain ipv4 
+### show grain ipv4
 
 salt \* grains.item ipv4
 
 
-### execute ssh command via minion 
+### execute ssh command via minion
 
 salt \* cmd.run 'zfs list'
 
 
-### show documentation for command 
+### show documentation for command
 
 salt \* sys.doc cmd
 
@@ -32,23 +32,23 @@ salt \* state.apply <sls_file> test=True
 
 
 sudo salt \* net.load_template salt://manage_master/files/master.py \
-debug=True test=True template_engine=py 
+debug=True test=True template_engine=py
 
 
 
 
-### passing arg to state files , mostly for testing 
+### passing arg to state files , mostly for testing
 
 sudo salt 'minion' state.show_sls create_jail saltdev=dev pillar="{'node':'unifi'}"
 
 
-## debugging fileserver 
-# show different fileserver envs
+## debugging fileserver
+### show different fileserver envs
 
 salt-run fileserver.envs
 
 
-# exectue command on a minion
-salt-call 
+### exectue command on a minion
+salt-call
 
 salt-call cp.list_master
