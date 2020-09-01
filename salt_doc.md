@@ -21,6 +21,11 @@ salt \* sys.doc cmd
 
 ### debug jinja templates
 
+# returns all available vars / dicts
+# add this line to your state file
+Context is: {{ show_full_context() }}
+
+
 sudo salt \* slsutil.renderer salt://manage_master/files/master.py
 
 
