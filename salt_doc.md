@@ -40,7 +40,9 @@ sudo salt \* net.load_template salt://manage_master/files/master.py \
 debug=True test=True template_engine=py
 
 
-
+### state without a state file
+salt \* state.single myjail.online name='unifi'
+salt \* state.single pkg.installed name='vim'
 
 ### passing arg to state files , mostly for testing
 
@@ -57,3 +59,6 @@ salt-run fileserver.envs
 salt-call
 
 salt-call cp.list_master
+
+
+
