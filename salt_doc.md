@@ -44,6 +44,9 @@ debug=True test=True template_engine=py
 salt \* state.single myjail.online name='unifi'
 salt \* state.single pkg.installed name='vim'
 
+### Call a single ID from the named module(s) and handle all requisites
+salt '*' state.sls_id my_state my_module pillar='{"foo": "bar"}'
+
 ### passing arg to state files , mostly for testing
 
 sudo salt 'minion' state.show_sls create_jail saltdev=dev pillar="{'node':'unifi'}"
