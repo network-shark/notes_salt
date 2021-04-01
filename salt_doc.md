@@ -26,6 +26,15 @@ salt \* sys.doc cmd
 Context is: {{ show_full_context() }}
 
 
+# just render a template with args
+salt \freebsd_dev slsutil.renderer salt://create_jail/files/rc_conf.jinja default_renderer='jinja' node_name=unbound
+
+# show all available states ( master )
+salt '*' state.show_sls '*'
+
+# show all available states ( minion )
+salt-call state.show_sls '*'
+
 sudo salt \* slsutil.renderer salt://manage_master/files/master.py
 
 
@@ -54,13 +63,20 @@ sudo salt 'minion' state.show_sls create_jail saltdev=dev pillar="{'node':'unifi
 
 ## debugging fileserver
 ### show different fileserver envs
+### These commands are only available on the master
 
 salt-run fileserver.envs
 
+# Force Update Fileserver
+salt-run fileserver.update
+
+# List files on Fileserver
+salt-run fileserver.file_list
 
 ### exectue command on a minion
-salt-call
+### These commands are only available where a minion is installed
 
+# copy something ???
 salt-call cp.list_master
 
 
