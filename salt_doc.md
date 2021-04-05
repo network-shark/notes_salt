@@ -79,5 +79,10 @@ salt-run fileserver.file_list
 # copy something ???
 salt-call cp.list_master
 
+### show pillar data for specific minion on master
+
+salt 'example_host' pillar.data
+
+
 
 
