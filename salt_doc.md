@@ -83,6 +83,11 @@ salt-call cp.list_master
 
 salt 'example_host' pillar.data
 
+### refresh pillar
 
+salt 'minion1' saltutil.refresh_pillar
 
+### clear minion cache
+
+salt 'minion1' saltutil.clear_cache
 
