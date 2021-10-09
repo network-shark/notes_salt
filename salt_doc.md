@@ -91,3 +91,6 @@ salt 'minion1' saltutil.refresh_pillar
 
 salt 'minion1' saltutil.clear_cache
 
+### remove the gitfs lock
+salt-run cache.clear_git_lock gitfs type=update
+
