@@ -12,3 +12,12 @@ create state/jail/{jailname}
 
 change map.jinja
 change init.sls
+
+
+add your jail to pillar/top.sls
+
+add your new jail under the hypervisor
+
+# optional  , just for highstate
+add the jail inside states
+
