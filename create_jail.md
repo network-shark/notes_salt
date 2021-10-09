@@ -21,3 +21,7 @@ add your new jail under the hypervisor
 # optional  , just for highstate
 add the jail inside states
 
+
+# add your new jail to dns
+
+
