@@ -4,8 +4,8 @@
 `source .venv/salt3004`
 
 ### install salt
-`pip instal salt`d
-
+`pip instal salt`
+```
 `ln -s /root/.venv/salt3004/bin/salt salt`
 `ln -s /root/.venv/salt3004/bin/salt-call salt-call`
 `ln -s /root/.venv/salt3004/bin/salt-cp salt-cp`
@@ -15,6 +15,7 @@
 `ln -s /root/.venv/salt3004/bin/salt-proxy salt-proxy`
 `ln -s /root/.venv/salt3004/bin/salt-run salt-run`
 `ln -s /root/.venv/salt3004/bin/salt-unity salt-unity`
+```
 
 ### you have to steal the init.d scripts from somewhere
 
