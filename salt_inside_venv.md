@@ -3,9 +3,7 @@
 python3 -m venv .venv/salt3004
 '''
 # enable venv
-'''
-source .venv/salt3004
-'''
+`source .venv/salt3004`
 
 # install salt
 '''
