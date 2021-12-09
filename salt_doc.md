@@ -54,7 +54,8 @@ salt \* state.single myjail.online name='unifi'
 salt \* state.single pkg.installed name='vim'
 
 ### Call a single ID from the named module(s) and handle all requisites
-salt '*' state.sls_id my_state my_module pillar='{"foo": "bar"}'
+salt '*' state.sls_id id_inside_state state_name pillar='{"foo": "bar"}'
+salt '*' state.sls_id create_zfs_filesystem_jails jail.base
 
 ### passing arg to state files , mostly for testing
 
