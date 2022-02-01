@@ -29,6 +29,14 @@ Context is: {{ show_full_context() }}
 # just render a template with args
 salt \freebsd_dev slsutil.renderer salt://create_jail/files/rc_conf.jinja default_renderer='jinja' node_name=unbound
 
+# render template via cli , even with grains !
+salt 'scrapli_1' file.apply_template_on_contents \
+contents='{% set my_value = 'hello' %} This is a default value {{ template }} string. This is a grain from the device {{grains.cpuarch}} , {{my_value}}' \
+template=jinja \
+"context={}" "defaults={'template': 'i am a default value'}" \
+saltenv=base
+
+
 # show all available states ( master )
 salt '*' state.show_sls '*'
 
@@ -94,4 +102,5 @@ salt 'minion1' saltutil.clear_cache
 
 ### remove the gitfs lock
 salt-run cache.clear_git_lock gitfs type=update
+
 
